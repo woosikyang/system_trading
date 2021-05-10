@@ -133,7 +133,7 @@ def get_target_price(code):
         target_price = today_open + (lastday_high - lastday_low) * 0.5
         return target_price
     except Exception as ex:
-        dbgout("`get_target_price() -> exception! " + str(ex) + "`")
+        print("`get_target_price() -> exception! " + str(ex) + "`")
         return None
 
 
@@ -151,7 +151,7 @@ def get_movingaverage(code, window):
         ma = closes.rolling(window=window).mean()
         return ma.loc[lastday]
     except Exception as ex:
-        dbgout('get_movingavrg(' + str(window) + ') -> exception! ' + str(ex))
+        print('get_movingavrg(' + str(window) + ') -> exception! ' + str(ex))
         return None
 
 
@@ -203,10 +203,10 @@ def buy_etf(code):
             print('get_stock_balance :', stock_name, stock_qty)
             if bought_qty > 0:
                 bought_list.append(code)
-                dbgout("`buy_etf(" + str(stock_name) + ' : ' + str(code) +
+                print("`buy_etf(" + str(stock_name) + ' : ' + str(code) +
                        ") -> " + str(bought_qty) + "EA bought!" + "`")
     except Exception as ex:
-        dbgout("`buy_etf(" + str(code) + ") -> exception! " + str(ex) + "`")
+        print("`buy_etf(" + str(code) + ") -> exception! " + str(ex) + "`")
 
 
 def sell_all():
@@ -241,7 +241,7 @@ def sell_all():
                 time.sleep(1)
             time.sleep(30)
     except Exception as ex:
-        dbgout("sell_all() -> exception! " + str(ex))
+        print("sell_all() -> exception! " + str(ex))
 
 
 if __name__ == '__main__':
