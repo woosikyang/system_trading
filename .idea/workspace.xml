@@ -4,7 +4,6 @@
     <list default="true" id="2a5e1a0e-8b30-4032-80c3-8ee23dc967c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybos_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybos_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cybose_tutorial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybose_tutorial.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,25 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cybos_1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5304">
-              <caret line="312" column="44" selection-start-line="312" selection-start-column="44" selection-end-line="312" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cybos_2.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cybos_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7236">
-              <caret line="436" selection-start-line="436" selection-end-line="436" />
+            <state relative-caret-position="9265">
+              <caret line="553" selection-start-line="553" selection-end-line="553" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -72,11 +52,47 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/종목검색_전략조건.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/당일 상승률 상위 200.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="194" selection-start-line="194" selection-end-line="194" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/slack.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="17">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -87,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cybose_tutorial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="188" column="38" lean-forward="true" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+            <state relative-caret-position="3162">
+              <caret line="188" column="38" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -97,22 +113,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mariadb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -125,6 +129,16 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>obj7043</find>
+      <find>CpCodeMgr</find>
+      <find>cpCodeMgr</find>
+      <find>rq7043</find>
+      <find>CpStockCur</find>
+      <find>CpEvent</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -139,18 +153,20 @@
         <option value="$PROJECT_DIR$/cybos_1.py" />
         <option value="$USER_HOME$/Anaconda3/envs/python_32/Lib/site-packages/pymysql/connections.py" />
         <option value="$USER_HOME$/Anaconda3/envs/python_32/Lib/site-packages/pymysql/cursors.py" />
-        <option value="$PROJECT_DIR$/configs.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/mariadb.py" />
         <option value="$PROJECT_DIR$/cybose_tutorial.py" />
         <option value="$PROJECT_DIR$/cybos_base.py" />
+        <option value="$PROJECT_DIR$/종목검색_전략조건.py" />
+        <option value="$PROJECT_DIR$/당일 상승률 상위 200.py" />
+        <option value="$PROJECT_DIR$/configs.py" />
+        <option value="$PROJECT_DIR$/slack.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-16" />
-    <option name="y" value="2" />
-    <option name="width" value="2126" />
+    <option name="x" value="112" />
+    <option name="width" value="2378" />
     <option name="height" value="2090" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -161,7 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,6 +188,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,16 +249,24 @@
       <workItem from="1622723566365" duration="599000" />
       <workItem from="1623155204453" duration="1979000" />
       <workItem from="1623194734466" duration="2246000" />
+      <workItem from="1623323921053" duration="4371000" />
+      <workItem from="1623416748660" duration="611000" />
+      <workItem from="1623666983556" duration="2626000" />
+      <workItem from="1623755269977" duration="1398000" />
+      <workItem from="1623933361185" duration="2086000" />
+      <workItem from="1624021236400" duration="595000" />
+      <workItem from="1624367679732" duration="609000" />
+      <workItem from="1624450904837" duration="3217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36394000" />
+    <option name="totallyTimeSpent" value="51907000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="1" width="1063" height="1045" extended-state="0" />
+    <frame x="56" y="0" width="1189" height="1045" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21251242" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19240953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -256,8 +280,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006605" side_tool="true" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" visible="true" weight="0.32969433" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.26746726" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" weight="0.32969433" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.31222707" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -290,18 +314,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybos_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5304">
-          <caret line="312" column="44" selection-start-line="312" selection-start-column="44" selection-end-line="312" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mariadb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybos_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" selection-start-line="35" selection-end-line="60" />
         </state>
       </provider>
     </entry>
@@ -319,23 +353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mariadb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cybos_4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -343,32 +360,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybose_tutorial.py">
+    <entry file="file://$PROJECT_DIR$/cybos_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="188" column="38" lean-forward="true" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+        <state relative-caret-position="9265">
+          <caret line="553" selection-start-line="553" selection-end-line="553" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybos_base.py">
+    <entry file="file://$PROJECT_DIR$/종목검색_전략조건.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7236">
-          <caret line="436" selection-start-line="436" selection-end-line="436" />
+        <state relative-caret-position="136">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="17">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybose_tutorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3162">
+          <caret line="188" column="38" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/당일 상승률 상위 200.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>

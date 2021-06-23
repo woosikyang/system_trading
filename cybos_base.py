@@ -9,15 +9,52 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 # 크레온 플러스 공통 OBJECT
-cpCodeMgr = win32com.client.Dispatch('CpUtil.CpStockCode')
+# 각종 코드정보 및 코드 리스트를 얻을 수 있습니다.
+cpStockCd = win32com.client.Dispatch('CpUtil.CpStockCode')
+# CYBOS의 각종 상태를 확인할 수 있음.
 cpStatus = win32com.client.Dispatch('CpUtil.CpCybos')
+# 설명 : 주문 오브젝트를 사용하기 위해 필요한 초기화 과정들을 수행한다
+# 모든 주문오브젝트는 사용하기 전에, 필수적으로 TradeInit을 호출한 후에 사용할 수 있다.
+# 전역변수(글로벌 변수) 로 선언하여 사용하여야 합니다.
 cpTradeUtil = win32com.client.Dispatch('CpTrade.CpTdUtil')
+# 주식 종목의 현재가에 관련된 데이터
 cpStock = win32com.client.Dispatch('DsCbo1.StockMst')
+# 주식, 업종, ELW의 차트데이터를 수신합니다.
 cpOhlc = win32com.client.Dispatch('CpSysDib.StockChart')
+# 계좌별 잔고 및 주문체결 평가 현황 데이터를 요청하고 수신한다
 cpBalance = win32com.client.Dispatch('CpTrade.CpTd6033')
+# 계좌별 매수주문 가능 금액/수량 데이터를 요청하고 수신한다
 cpCash = win32com.client.Dispatch('CpTrade.CpTdNew5331A')
+# 장내주식/코스닥주식/ELW 주문(현금 주문) 데이터를 요청하고 수신한다
 cpOrder = win32com.client.Dispatch('CpTrade.CpTd0311')
+# CYBOS에서 사용되는 주식코드 조회 작업을 함.
 cpCodeMgr = win32com.client.Dispatch('CpUtil.CpCodeMgr')
+
+
+# 종목코드 리스트 구하기
+
+def code_name() :
+    codeList = cpCodeMgr.GetStockListByMarket(1)  # 거래소
+    codeList2 = cpCodeMgr.GetStockListByMarket(2)  # 코스닥
+
+    print('거래소 전체 종목 : {}'.format(len(codeList)))
+    print('코스닥 전체 종목 : {}'.format(len(codeList2)))
+    print("거래소 + 코스닥 종목코드 ", len(codeList) + len(codeList2))
+    print("거래소 종목코드", len(codeList))
+    kospi = {}
+    for i, code in enumerate(codeList):
+        secondCode = cpCodeMgr.GetStockSectionKind(code)
+        name = cpCodeMgr.CodeToName(code)
+        stdPrice = cpCodeMgr.GetStockStdPrice(code)
+        kospi[name] = secondCode
+
+    print("코스닥 종목코드", len(codeList2))
+    kosdaq = {}
+    for i, code in enumerate(codeList2):
+        secondCode = cpCodeMgr.GetStockSectionKind(code)
+        name = cpCodeMgr.CodeToName(code)
+        kosdaq[name] = secondCode
+    return kospi, kosdaq
 
 def check_creon_system():
     """크레온 플러스 시스템 연결 상태를 점검한다."""
@@ -510,3 +547,7 @@ if __name__ == '__main__':
             time.sleep(3)
     except Exception as ex:
         print('`main -> exception! ' + str(ex) + '`')
+
+
+    kospi, kosdaq = code_name()
+
