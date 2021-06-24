@@ -350,13 +350,136 @@ def buy(company_code = None, buy_quantity = None, buy_price = None ) :
         exit()
     return
 
+# CpEvent: 실시간 이벤트 수신 클래스
+class CpEvent:
+    def set_params(self, client):
+        self.client = client
 
-def get_top(k) :
-    '''
-    :param k : 종목 개수 /
-    :return: 전날 상승률 top k개 종목 가져오기
-    '''
+    def OnReceived(self):
+        code = self.client.GetHeaderValue(0)  # 초
+        name = self.client.GetHeaderValue(1)  # 초
+        timess = self.client.GetHeaderValue(18)  # 초
+        exFlag = self.client.GetHeaderValue(19)  # 예상체결 플래그
+        cprice = self.client.GetHeaderValue(13)  # 현재가
+        diff = self.client.GetHeaderValue(2)  # 대비
+        cVol = self.client.GetHeaderValue(17)  # 순간체결수량
+        vol = self.client.GetHeaderValue(9)  # 거래량
 
+        if (exFlag == ord('1')):  # 동시호가 시간 (예상체결)
+            print("실시간(예상체결)", name, timess, "*", cprice, "대비", diff, "체결량", cVol, "거래량", vol)
+        elif (exFlag == ord('2')):  # 장중(체결)
+            print("실시간(장중 체결)", name, timess, cprice, "대비", diff, "체결량", cVol, "거래량", vol)
+
+# CpStockCur: 실시간 현재가 요청 클래스
+class CpStockCur:
+    def Subscribe(self, code):
+        self.objStockCur = win32com.client.Dispatch("DsCbo1.StockCur")
+        handler = win32com.client.WithEvents(self.objStockCur, CpEvent)
+        self.objStockCur.SetInputValue(0, code)
+        handler.set_params(self.objStockCur)
+        self.objStockCur.Subscribe()
+
+    def Unsubscribe(self):
+        self.objStockCur.Unsubscribe()
+
+
+class Cp7043:
+    def __init__(self):
+        # 통신 OBJECT 기본 세팅
+        self.objRq = win32com.client.Dispatch("CpSysDib.CpSvrNew7043")
+        self.objRq.SetInputValue(0, ord('0'))  # 거래소 + 코스닥
+        self.objRq.SetInputValue(1, ord('2'))  # 상승
+        self.objRq.SetInputValue(2, ord('1'))  # 당일
+        self.objRq.SetInputValue(3, 21)  # 전일 대비 상위 순
+        self.objRq.SetInputValue(4, ord('1'))  # 관리 종목 제외
+        self.objRq.SetInputValue(5, ord('0'))  # 거래량 전체
+        self.objRq.SetInputValue(6, ord('0'))  # '표시 항목 선택 - '0': 시가대비
+        self.objRq.SetInputValue(7, 0)  # 등락율 시작
+        self.objRq.SetInputValue(8, 30)  # 등락율 끝
+
+    # 실제적인 7043 통신 처리
+    def rq7043(self, retcode, data):
+        self.objRq.BlockRequest()
+        # 현재가 통신 및 통신 에러 처리
+        rqStatus = self.objRq.GetDibStatus()
+        rqRet = self.objRq.GetDibMsg1()
+        print("통신상태", rqStatus, rqRet)
+        if rqStatus != 0:
+            return False
+
+        cnt = self.objRq.GetHeaderValue(0)
+        cntTotal = self.objRq.GetHeaderValue(1)
+        print(cnt, cntTotal)
+        for i in range(cnt):
+            code = self.objRq.GetDataValue(0, i)  # 코드
+            retcode.append(code)
+            name = self.objRq.GetDataValue(1, i)  # 종목명
+            price = self.objRq.GetDataValue(2, i)  # 종목명
+            diffflag = self.objRq.GetDataValue(3, i)  #
+            diff = self.objRq.GetDataValue(4, i)
+            rate = self.objRq.GetDataValue(5, i)
+            vol = self.objRq.GetDataValue(6, i)  # 거래량
+            # print(code, name, diffflag, diff, vol)
+            data.append((code, name, price, diffflag, diff, rate, vol))
+            if len(retcode) >= 200:  # 최대 200 종목만,
+                break
+        return data
+
+    def Request(self, retCode, data):
+        self.rq7043(retCode, data)
+        # 연속 데이터 조회 - 200 개까지만.
+        while self.objRq.Continue:
+            (self.rq7043(retCode, data))
+            # print(len(retCode))
+            if len(retCode) >= 200:
+                break
+
+        # #7043 상승하락 서비스를 통해 받은 상승률 상위 200 종목
+        # size = len(retCode)
+        # for i in range(size):
+        #    print(retCode[i])
+        return True
+
+
+# CpMarketEye : 복수종목 현재가 통신 서비스
+class CpMarketEye_v2:
+    def Request(self, codes, rqField):
+        # 연결 여부 체크
+        objCpCybos = win32com.client.Dispatch("CpUtil.CpCybos")
+        bConnect = objCpCybos.IsConnect
+        if (bConnect == 0):
+            print("PLUS가 정상적으로 연결되지 않음. ")
+            return False
+
+        # 관심종목 객체 구하기
+        objRq = win32com.client.Dispatch("CpSysDib.MarketEye")
+        # 요청 필드 세팅 - 종목코드, 종목명, 시간, 대비부호, 대비, 현재가, 거래량
+        # rqField = [0,17, 1,2,3,4,10]
+        objRq.SetInputValue(0, rqField)  # 요청 필드
+        objRq.SetInputValue(1, codes)  # 종목코드 or 종목코드 리스트
+        objRq.BlockRequest()
+
+        # 현재가 통신 및 통신 에러 처리
+        rqStatus = objRq.GetDibStatus()
+        rqRet = objRq.GetDibMsg1()
+        print("통신상태", rqStatus, rqRet)
+        if rqStatus != 0:
+            return False
+
+        cnt = objRq.GetHeaderValue(2)
+
+        data = []
+        for i in range(cnt):
+            rpCode = objRq.GetDataValue(0, i)  # 코드
+            rpName = objRq.GetDataValue(1, i)  # 종목명
+            rpTime = objRq.GetDataValue(2, i)  # 시간
+            rpDiffFlag = objRq.GetDataValue(3, i)  # 대비부호
+            rpDiff = objRq.GetDataValue(4, i)  # 대비
+            rpCur = objRq.GetDataValue(5, i)  # 현재가
+            rpVol = objRq.GetDataValue(6, i)  # 거래량
+            print(rpCode, rpName, rpTime, rpDiffFlag, rpDiff, rpCur, rpVol)
+            data.append((rpCode, rpName, rpTime, rpDiffFlag, rpDiff, rpCur, rpVol))
+        return data
 
 #주식차트 조회(분차트 / 틱차트)
 
