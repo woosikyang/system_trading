@@ -9,5 +9,3 @@ def post_message(token, channel, text):
                              )
     print(response)
 
-text = 'Hello World'
-post_message(slack_api_token, "#주식", text)
