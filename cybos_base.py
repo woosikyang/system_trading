@@ -392,6 +392,7 @@ class Cp7043:
         self.objRq.SetInputValue(1, ord('2'))  # 상승
         self.objRq.SetInputValue(2, ord('1'))  # 당일
         self.objRq.SetInputValue(3, 21)  # 전일 대비 상위 순
+        # self.objRq.SetInputValue(3, 21)  # 전일 대비 상위 순
         self.objRq.SetInputValue(4, ord('1'))  # 관리 종목 제외
         self.objRq.SetInputValue(5, ord('0'))  # 거래량 전체
         self.objRq.SetInputValue(6, ord('0'))  # '표시 항목 선택 - '0': 시가대비
@@ -443,7 +444,7 @@ class Cp7043:
 
 
 # CpMarketEye : 복수종목 현재가 통신 서비스
-def CpMarketEye_v2(codes, rqField):
+def CpMarketEye_v2(codes):
     # 연결 여부 체크
     objCpCybos = win32com.client.Dispatch("CpUtil.CpCybos")
     bConnect = objCpCybos.IsConnect
@@ -453,8 +454,8 @@ def CpMarketEye_v2(codes, rqField):
 
     # 관심종목 객체 구하기
     objRq = win32com.client.Dispatch("CpSysDib.MarketEye")
-    # 요청 필드 세팅 - 종목코드, 종목명, 시간, 대비부호, 대비, 현재가, 거래량
-    # rqField = [0,17, 1,2,3,4,10]
+    # 요청 필드 세팅 - 종목코드, 시간, 대비부호, 대비, 현재가,시가, 매도호가, 매수호가, 거래량, 거래대금, 전일거래량, 체결강도
+    rqField = [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 22, 24]  # 요청 필드
     objRq.SetInputValue(0, rqField)  # 요청 필드
     objRq.SetInputValue(1, codes)  # 종목코드 or 종목코드 리스트
     objRq.BlockRequest()
@@ -470,15 +471,26 @@ def CpMarketEye_v2(codes, rqField):
 
     data = []
     for i in range(cnt):
-        rpCode = objRq.GetDataValue(0, i)  # 코드
-        rpName = objRq.GetDataValue(1, i)  # 종목명
-        rpTime = objRq.GetDataValue(2, i)  # 시간
-        rpDiffFlag = objRq.GetDataValue(3, i)  # 대비부호
-        rpDiff = objRq.GetDataValue(4, i)  # 대비
-        rpCur = objRq.GetDataValue(5, i)  # 현재가
-        rpVol = objRq.GetDataValue(6, i)  # 거래량
-        print(rpCode, rpName, rpTime, rpDiffFlag, rpDiff, rpCur, rpVol)
-        data.append((rpCode, rpName, rpTime, rpDiffFlag, rpDiff, rpCur, rpVol))
+        # rpCode = objRq.GetDataValue(0, i)  # 코드
+        # # rpName = objRq.GetDataValue(1, i)  # 종목명
+        # rpTime = objRq.GetDataValue(1, i)  # 시간
+        # rpDiffFlag = objRq.GetDataValue(2, i)  # 대비부호
+        # rpDiff = objRq.GetDataValue(3, i)  # 대비
+        # rpCur = objRq.GetDataValue(4, i)  # 현재가
+        # rpStart = objRq.GetDataValue(5, i)  # 현재가
+        # sellCall = objRq.GetDataValue(6, i)  # 매도호가
+        # buyCall = objRq.GetDataValue(7, i)  # 매수호가
+        # rpVol = objRq.GetDataValue(8, i)  # 거래량
+        # rpPrice = objRq.GetDataValue(9, i)  # 거래대금
+        # rpPrice_d_1 = objRq.GetDataValue(10, i)  # 전일거래량
+        # rpPower = objRq.GetDataValue(11, i)  # 체결강도
+        # if i % 100 == 0 :
+        #     print(rpCode, rpTime, rpDiffFlag, rpDiff, rpCur, rpStart, sellCall, buyCall, rpVol, rpPrice, rpPrice_d_1, rpPower)
+        #     data.append((rpCode, rpTime, rpDiffFlag, rpDiff, rpCur,rpStart, sellCall, buyCall, rpVol, rpPrice, rpPrice_d_1, rpPower))
+        tmp = [objRq.GetDataValue(v,i) for v in range(len(rqField))]
+        data.append(tmp)
+        if i % 100 == 0 :
+            print(tmp)
     return data
 
 #주식차트 조회(분차트 / 틱차트)
