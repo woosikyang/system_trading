@@ -37,8 +37,8 @@ def filtering(data_list) :
 
 
 def condition(stocks) :
-    code = stocks[0]['code']
-    #현재가로만 비교
-    cur_price, _, __ = get_current_price(code)
-    if cur_price > code :
+    # code = stocks[0]['code']
+    rate = stocks[0]['rate']
+    if rate > 1.05 or rate < 0.98 :
         return False
+

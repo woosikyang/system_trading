@@ -127,16 +127,20 @@ def get_stock_balance(code):
         print('평가금액: ' + str(cpBalance.GetHeaderValue(3)))
         print('평가손익: ' + str(cpBalance.GetHeaderValue(4)))
         print('종목수: ' + str(cpBalance.GetHeaderValue(7)))
+        print('수익율: ' + str(cpBalance.GetHeaderValue(8)))
+
     stocks = []
     for i in range(cpBalance.GetHeaderValue(7)):
         stock_code = cpBalance.GetDataValue(12, i)  # 종목코드
         stock_name = cpBalance.GetDataValue(0, i)   # 종목명
         stock_qty = cpBalance.GetDataValue(15, i)   # 수량
+        stock_rate = cpBalance.GetHeaderValue(8, i)   # 수익율
+
         if code == 'ALL':
             print(str(i+1) + ' ' + stock_code + '(' + stock_name + ')'
-                + ':' + str(stock_qty))
+                + ':' + str(stock_qty) + '/' + str(stock_rate))
             stocks.append({'code': stock_code, 'name': stock_name,
-                'qty': stock_qty})
+                'qty': stock_qty, 'rate' : stock_rate})
         if stock_code == code:
             return stock_name, stock_qty
     if code == 'ALL':

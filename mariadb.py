@@ -7,12 +7,14 @@ conn = pymysql.connect(host=configs.ip,
                        user='root',
                        password=configs.password,
                        charset='utf8',
-                       database='TEST',
+                       database='uprising',
                        port=3306)
 
 cur = conn.cursor()
-
-sql = "create table if not exists userTable (id char(4), userName char(10))"
+# 종목코드, 시간, 대비부호, 대비, 현재가, 시가, 매도호가, 매수호가, 거래량, 거래대금, 전일거래량, 체결강도
+sql = "create table if not exists RISE (code varchar(10)" \
+                                        "cur_time char(5)" \
+      "                                   )"
 
 #sql 실행
 cur.execute(sql)

@@ -76,7 +76,13 @@ if __name__ == '__main__':
                 text = '국내 정규장 종료했습니다. 프로그램 종료합니다.'
                 post_message(slack_api_token, "#주식", text)
                 # 그날의 상위종목 DB로 전송
-
+                codes = []
+                symbol_list = []
+                obj7043 = Cp7043()
+                obj7043.Request(codes, symbol_list)
+                # 종목정보 가져오기
+                symbol_list2 = CpMarketEye_v2(codes)
+                # DB 에 저장
 
                 sys.exit(0)
             # 장 중간 거래
