@@ -27,11 +27,11 @@ def filtering(data_list) :
     :return:
     '''
     # 조건 1
-    data_list = [v for v in data_list if v[2] =='2']
+    # data_list = [v for v in data_list if v[2] =='2']
     # 조건 2
     data_list = [v for v in data_list if (1.03 < v[4]/v[5]) and (v[4]/v[5] < 1.05)]
     # 조건 3
-    data_list = [v for v in data_list if v[11] > 100]
+    data_list = [v for v in data_list if v[11] > 150]
 
     return data_list
 

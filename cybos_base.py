@@ -70,9 +70,9 @@ def check_creon_system():
         return False
 
     # 주문 관련 초기화 - 계좌 관련 코드가 있을 때만 사용
-    if (cpTradeUtil.TradeInit(0) != 0):
-        print('check_creon_system() : init trade -> FAILED')
-        return False
+    # if (cpTradeUtil.TradeInit() != 0):
+    #     print('check_creon_system() : init trade -> FAILED')
+    #     return False
     return True
 
 
@@ -114,7 +114,7 @@ def get_ohlc(code, qty):
 
 def get_stock_balance(code):
     """인자로 받은 종목의 종목명과 수량을 반환한다."""
-    cpTradeUtil.TradeInit()
+    # cpTradeUtil.TradeInit()
     acc = cpTradeUtil.AccountNumber[0]      # 계좌번호
     accFlag = cpTradeUtil.GoodsList(acc, 1) # -1:전체, 1:주식, 2:선물/옵션
     cpBalance.SetInputValue(0, acc)         # 계좌번호
@@ -152,7 +152,7 @@ def get_stock_balance(code):
 
 def get_current_cash():
     """증거금 100% 주문 가능 금액을 반환한다."""
-    cpTradeUtil.TradeInit()
+    # cpTradeUtil.TradeInit()
     acc = cpTradeUtil.AccountNumber[0]    # 계좌번호
     accFlag = cpTradeUtil.GoodsList(acc, 1) # -1:전체, 1:주식, 2:선물/옵션
     cpCash.SetInputValue(0, acc)              # 계좌번호
@@ -222,7 +222,7 @@ def buy_etf(code, buy_amount):
                 and current_price > ma10_price:
             print(stock_name + '(' + str(code) + ') ' + str(buy_qty) +
                      'EA : ' + str(current_price) + ' meets the buy condition!`')
-            cpTradeUtil.TradeInit()
+            # cpTradeUtil.TradeInit()
             acc = cpTradeUtil.AccountNumber[0]  # 계좌번호
             accFlag = cpTradeUtil.GoodsList(acc, 1)  # -1:전체,1:주식,2:선물/옵션
             # 최유리 FOK 매수 주문 설정
@@ -266,7 +266,7 @@ def sell_all():
 
     """
     try:
-        cpTradeUtil.TradeInit()
+        # cpTradeUtil.TradeInit()
         acc = cpTradeUtil.AccountNumber[0]  # 계좌번호
         accFlag = cpTradeUtil.GoodsList(acc, 1)  # -1:전체, 1:주식, 2:선물/옵션
         while True:
@@ -327,7 +327,7 @@ company_code : 종목코드
 buy_quantity : 매수수량
 buy_price : 주문단가
 '''
-def buy(company_code = None, buy_quantity = None, buy_price = None ) :
+def buy(company_code,buy_quantity, buy_price) :
     #### 초기화
     instCheck = cpTradeUtil.TradeInit(0)
     if (instCheck != 0):

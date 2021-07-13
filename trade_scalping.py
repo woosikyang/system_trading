@@ -38,15 +38,20 @@ from strategy import *
 from mariadb import *
 import time
 
-kospi, kosdaq = code_name()
-kospi_re = {v:i for i,v in (kospi.items())}
-kosdaq_re = {v:i for i,v in (kospi.items())}
+
+cpTradeUtil.TradeInit()
 
 
 if __name__ == '__main__':
     '''
     global 변수 설정
     '''
+    global cpTradeUtil
+
+    kospi, kosdaq = code_name()
+    kospi_re = {v: i for i, v in (kospi.items())}
+    kosdaq_re = {v: i for i, v in (kospi.items())}
+
     print('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
     t_now = datetime.now()
     # 장 시작
@@ -83,7 +88,7 @@ if __name__ == '__main__':
                 # 종목정보 가져오기
                 symbol_list2 = CpMarketEye_v2(codes)
                 # DB 에 저장
-
+                # To Be Updated
                 sys.exit(0)
             # 장 중간 거래
             if t_9 < t_now < t_exit :
@@ -111,8 +116,7 @@ if __name__ == '__main__':
                     # 매수
                     # 우선은 한종목 전체 매수
                     final_symbol_list = final_symbol_list[0]
-
-                    buy(company_code=final_symbol_list[0])
+                    buy(company_code=final_symbol_list[0], buy_quantity=total_cash // final_symbol_list[5], buy_price=final_symbol_list[5])
                     if final_symbol_list[0] in kospi.values() :
                         text = '{} 매수 완료'.format(kospi[final_symbol_list[0]])
                     else :
@@ -139,13 +143,7 @@ if __name__ == '__main__':
             # 3초후 재탐색
 
             time.sleep(3)
-
+            # print('재탐색 시작')
     except Exception as ex:
         print('`main -> exception! ' + str(ex) + '`')
 
-'''
-종목코드, 시간, 대비부호, 대비, 현재가, 시가, 매도호가, 매수호가, 거래량, 거래대금, 전일거래량, 체결강도
-
-상승률 : 현재가 / 시가
-체결강도 : 특정 시점 매수 / 매도 * 100 
-'''
