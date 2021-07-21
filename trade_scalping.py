@@ -37,7 +37,7 @@ from configs import *
 from strategy import *
 from mariadb import *
 import time
-
+from sys import exit
 
 cpTradeUtil.TradeInit()
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     kospi, kosdaq = code_name()
     kospi_re = {v: i for i, v in (kospi.items())}
-    kosdaq_re = {v: i for i, v in (kospi.items())}
+    kosdaq_re = {v: i for i, v in (kosdaq.items())}
 
     print('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
     t_now = datetime.now()
@@ -111,19 +111,24 @@ if __name__ == '__main__':
                 # 필터링 후 매수 대상 종목선정
                 final_symbol_list = filtering(symbol_list2)
 
-
                 if len(final_symbol_list) >= 1 :
                     # 매수
                     # 우선은 한종목 전체 매수
                     final_symbol_list = final_symbol_list[0]
-                    buy(company_code=final_symbol_list[0], buy_quantity=total_cash // final_symbol_list[5], buy_price=final_symbol_list[5])
-                    if final_symbol_list[0] in kospi.values() :
-                        text = '{} 매수 완료'.format(kospi[final_symbol_list[0]])
-                    else :
-                        text = '{} 매수 완료'.format(kosdaq[final_symbol_list[0]])
-                    post_message(slack_api_token, "#주식", text)
+                    buy(company_code=final_symbol_list[0], buy_quantity=(total_cash // final_symbol_list[5]) // 2, buy_price=final_symbol_list[5])
 
-                    stocks = get_stock_balance('ALL')  # 보유한 모든 종목 조회
+                    # 매수 확인 후 메세지 보내기
+
+                    while True :
+                        stocks = get_stock_balance('ALL')  # 보유한 모든 종목 조회
+
+                        if final_symbol_list[0] in list(kospi_re.keys()) :
+                            text = '{} 매수 완료'.format(kospi_re[final_symbol_list[0]])
+                        else :
+                            text = '{} 매수 완료'.format(kosdaq_re[final_symbol_list[0]])
+                        post_message(slack_api_token, "#주식", text)
+
+                        time.sleep(1.5)
 
                     # 현재상황 판단 -> 매도 시그널 제공시 전체 매도
                     while True and len(stocks) != 0 :

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2a5e1a0e-8b30-4032-80c3-8ee23dc967c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Top200.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Top200.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybos_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybos_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mariadb.py" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trade_scalping.py" beforeDir="false" afterPath="$PROJECT_DIR$/trade_scalping.py" afterDir="false" />
     </list>
@@ -33,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cybos_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3993">
-              <caret line="263" column="34" lean-forward="true" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="34" />
+            <state relative-caret-position="15079">
+              <caret line="896" selection-start-line="896" selection-end-line="896" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -67,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strategy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="731">
+              <caret line="44" selection-start-line="37" selection-end-line="44" />
               <folding>
                 <element signature="e#98#138#0" expanded="true" />
               </folding>
@@ -76,13 +76,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade_scalping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2053">
-              <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+            <state relative-caret-position="362">
+              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
               <folding>
                 <element signature="e#303#333#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/미체결 조회 및 일괄 취소.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="552" column="30" lean-forward="true" selection-start-line="552" selection-start-column="30" selection-end-line="552" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,7 +137,6 @@
     <findStrings>
       <find>obj7043</find>
       <find>CpCodeMgr</find>
-      <find>cpCodeMgr</find>
       <find>rq7043</find>
       <find>CpStockCur</find>
       <find>CpEvent</find>
@@ -138,6 +149,9 @@
       <find>CpTd0311</find>
       <find>cpTradeUtil</find>
       <find>cpTradeUtil.TradeInit()</find>
+      <find>cpCodeMgr</find>
+      <find>sell_all()</find>
+      <find>exit()</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,12 +177,14 @@
         <option value="$PROJECT_DIR$/strategy.py" />
         <option value="$PROJECT_DIR$/cybos_base.py" />
         <option value="$PROJECT_DIR$/trade_scalping.py" />
+        <option value="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-62" />
-    <option name="width" value="2650" />
+    <option name="x" value="4" />
+    <option name="y" value="8" />
+    <option name="width" value="2840" />
     <option name="height" value="2090" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -179,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,6 +206,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,16 +283,20 @@
       <workItem from="1625987864533" duration="610000" />
       <workItem from="1626099399519" duration="598000" />
       <workItem from="1626182354300" duration="965000" />
+      <workItem from="1626651514195" duration="5702000" />
+      <workItem from="1626786502064" duration="840000" />
+      <workItem from="1626862191598" duration="152000" />
+      <workItem from="1626865774834" duration="3859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75628000" />
+    <option name="totallyTimeSpent" value="86181000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-31" y="0" width="1325" height="1045" extended-state="0" />
+    <frame x="2" y="4" width="1420" height="1045" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11032309" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1085044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -291,7 +311,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006605" side_tool="true" weight="0.32969433" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" weight="0.32969433" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.45960698" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -423,6 +443,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cybos_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15079">
+          <caret line="896" selection-start-line="896" selection-end-line="896" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/markeyeye.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -443,8 +473,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="731">
+          <caret line="44" selection-start-line="37" selection-end-line="44" />
           <folding>
             <element signature="e#98#138#0" expanded="true" />
           </folding>
@@ -471,22 +501,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybos_base.py">
+    <entry file="file://$PROJECT_DIR$/trade_scalping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3993">
-          <caret line="263" column="34" lean-forward="true" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="34" />
+        <state relative-caret-position="362">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#303#333#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trade_scalping.py">
+    <entry file="file://$PROJECT_DIR$/미체결 조회 및 일괄 취소.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2053">
-          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+        <state relative-caret-position="204">
+          <caret line="552" column="30" lean-forward="true" selection-start-line="552" selection-start-column="30" selection-end-line="552" selection-end-column="30" />
           <folding>
-            <element signature="e#303#333#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>

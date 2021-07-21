@@ -47,15 +47,20 @@ def code_name() :
         secondCode = cpCodeMgr.GetStockSectionKind(code)
         name = cpCodeMgr.CodeToName(code)
         stdPrice = cpCodeMgr.GetStockStdPrice(code)
-        kospi[name] = secondCode
+        kospi[name] = code
 
     print("코스닥 종목코드", len(codeList2))
     kosdaq = {}
     for i, code in enumerate(codeList2):
         secondCode = cpCodeMgr.GetStockSectionKind(code)
         name = cpCodeMgr.CodeToName(code)
-        kosdaq[name] = secondCode
+        kosdaq[name] = code
     return kospi, kosdaq
+
+
+
+
+
 
 def check_creon_system():
     """크레온 플러스 시스템 연결 상태를 점검한다."""
@@ -134,7 +139,7 @@ def get_stock_balance(code):
         stock_code = cpBalance.GetDataValue(12, i)  # 종목코드
         stock_name = cpBalance.GetDataValue(0, i)   # 종목명
         stock_qty = cpBalance.GetDataValue(15, i)   # 수량
-        stock_rate = cpBalance.GetHeaderValue(8, i)   # 수익율
+        stock_rate = cpBalance.GetHeaderValue(8)   # 수익율
 
         if code == 'ALL':
             print(str(i+1) + ' ' + stock_code + '(' + stock_name + ')'
@@ -293,7 +298,7 @@ def sell_all():
                         remain_time = cpStatus.LimitRequestRemainTime
                         print('주의: 연속 주문 제한, 대기시간:', remain_time / 1000)
                 time.sleep(1)
-            time.sleep(30)
+            time.sleep(3)
     except Exception as ex:
         print("sell_all() -> exception! " + str(ex))
 
@@ -847,6 +852,45 @@ class Cp6033:
         return True
 
 
+class CpPublish:
+    def __init__(self, name, serviceID):
+        self.name = name
+        self.obj = win32com.client.Dispatch(serviceID)
+        self.bIsSB = False
+
+    def Subscribe(self, var, caller):
+        if self.bIsSB:
+            self.Unsubscribe()
+
+        if (len(var) > 0):
+            self.obj.SetInputValue(0, var)
+
+        handler = win32com.client.WithEvents(self.obj, CpEvent)
+        handler.set_params(self.obj, self.name, caller)
+        self.obj.Subscribe()
+        self.bIsSB = True
+
+    def Unsubscribe(self):
+        if self.bIsSB:
+            self.obj.Unsubscribe()
+        self.bIsSB = False
+# CpPBConclusion: 실시간 주문 체결 수신 클래그
+class CpPBConclusion(CpPublish):
+    def __init__(self):
+        super().__init__('conclution', 'DsCbo1.CpConclusion')
 
 
+# CpPBConclusion: 실시간 주문 체결 수신 클래그
+class CpPBConclusion:
+    def __init__(self):
+        self.name = 'conclution'
+        self.obj = win32com.client.Dispatch('DsCbo1.CpConclusion')
 
+    def Subscribe(self, parent):
+        self.parent = parent
+        handler = win32com.client.WithEvents(self.obj, CpEvent)
+        handler.set_params(self.obj, self.name, parent)
+        self.obj.Subscribe()
+
+    def Unsubscribe(self):
+        self.obj.Unsubscribe()
