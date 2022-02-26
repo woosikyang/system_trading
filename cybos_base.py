@@ -133,6 +133,11 @@ def get_stock_balance(code):
         print('평가손익: ' + str(cpBalance.GetHeaderValue(4)))
         print('종목수: ' + str(cpBalance.GetHeaderValue(7)))
         print('수익율: ' + str(cpBalance.GetHeaderValue(8)))
+        stock_cnt = cpBalance.GetHeaderValue(7)
+        for k in range(stock_cnt) :
+            print('종목코드: ' + str(cpBalance.GetDataValue(12,k)))
+            print('종목명: ' + str(cpBalance.GetDataValue(0,k)))
+            print('종목명: ' + str(cpBalance.GetDataValue(15,k)))
 
     stocks = []
     for i in range(cpBalance.GetHeaderValue(7)):
@@ -351,6 +356,40 @@ def buy(company_code,buy_quantity, buy_price) :
     objStockOrder.SetInputValue(4, buy_quantity)  # 매수수량 - 요청 수량으로 변경 필요
     objStockOrder.SetInputValue(5, buy_price)  # 주문단가 - 필요한 가격으로 변경 필요
     objStockOrder.SetInputValue(7, "0")  # 주문 조건 구분 코드, 0: 기본 1: IOC 2:FOK
+    objStockOrder.SetInputValue(8, "01")  # 주문호가 구분코드 - 01: 보통
+    # 매수 주문 요청
+    nRet = objStockOrder.BlockRequest()
+    if (nRet != 0):
+        print("주문요청 오류", nRet)
+        # 0: 정상,  그 외 오류, 4: 주문요청제한 개수 초과
+        exit()
+    return
+
+#주식매수주문
+'''
+company_code : 종목코드
+buy_quantity : 매수수량
+buy_price : 주문단가
+'''
+def buy_ioc(company_code,buy_quantity, buy_price) :
+    #### 초기화
+    instCheck = cpTradeUtil.TradeInit(0)
+    if (instCheck != 0):
+        print("Initialization Fail")
+    else:
+        print("Initialization Success")
+    # 주식 매수 주문
+    acc = cpTradeUtil.AccountNumber[0]  # 계좌번호
+    accFlag = cpTradeUtil.GoodsList(acc, 1)  # 주식상품 구분
+    print(acc, accFlag[0])
+    objStockOrder = win32com.client.Dispatch("CpTrade.CpTd0311")
+    objStockOrder.SetInputValue(0, "2")  # 2: 매수
+    objStockOrder.SetInputValue(1, acc)  # 계좌번호
+    objStockOrder.SetInputValue(2, accFlag[0])  # 상품구분 - 주식 상품 중 첫번째
+    objStockOrder.SetInputValue(3, company_code)  # 종목코드 - 필요한 종목으로 변경 필요
+    objStockOrder.SetInputValue(4, buy_quantity)  # 매수수량 - 요청 수량으로 변경 필요
+    objStockOrder.SetInputValue(5, buy_price)  # 주문단가 - 필요한 가격으로 변경 필요
+    objStockOrder.SetInputValue(7, "1")  # 주문 조건 구분 코드, 0: 기본 1: IOC 2:FOK
     objStockOrder.SetInputValue(8, "01")  # 주문호가 구분코드 - 01: 보통
     # 매수 주문 요청
     nRet = objStockOrder.BlockRequest()
@@ -894,3 +933,31 @@ class CpPBConclusion:
 
     def Unsubscribe(self):
         self.obj.Unsubscribe()
+
+
+'''
+
+   함수: GetLimitRemaintTime(limitType) 제공 
+   위치: CpUtil.CpCybos 
+    Method
+    value = object.GetLimitRemainTime(limitType)
+    limitType에대한 제한 해제 하기전까지 남은시간을 반환합니다.
+    limitType:  요쳥에 대한 제한타입
+    LT_TRADE_REQUEST        = 0,  주문 / 계좌 관련 RQ 요청
+    LT_NONTRADE_REQUEST  = 1,  시세관련 RQ 요청
+    반환값: 제한 해제 하기전까지의  남은시간
+        
+4. 개발 가이드 
+    4.1 시세 제한 체크 
+        - 남은 호출 건수 
+         GetLimitRemainCount(1) 
+        - 지연 해제 남은 시간 
+          GetLimitRemainTime(1)
+
+    4.2 주문 및 계좌 제한 체크 
+        - 남은  호출 건수 
+           GetLimitRemainCount(0) 
+        - 지연 해제 남은 시간 
+          GetLimitRemainTime(0)
+
+'''

@@ -38,7 +38,7 @@ def filtering(data_list) :
 
 def condition(stocks) :
     # code = stocks[0]['code']
-    rate = stocks[0]['rate']
-    if rate > 3 or rate < -2 :
-        return False
+    for stock in stocks :
+        if stock['rate'] > 3 or stock['rate'] < -2 :
+            return True
 

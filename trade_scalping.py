@@ -64,10 +64,11 @@ if __name__ == '__main__':
         print('Today is', 'Saturday.' if today == 5 else 'Sunday.')
         sys.exit(0)
     #장 시작 전 당일 계좌상태 확인
-    stocks = get_stock_balance('ALL')  # 보유한 모든 종목 조회
+    stocks = get_stock_balance('ALL')  # 보유한 모든 종목 리턴
 
-    total_cash = int(get_current_cash())  # 100% 증거금 주문 가능 금액 조회
-    print('100% 증거금 주문 가능 금액 :', total_cash)
+
+    start_total_cash = int(get_current_cash())  # 100% 증거금 주문 가능 금액 조회
+    print('{} 기준 100% 증거금 주문 가능 금액 :'.format(t_now.strftime('%Y-%m-%d')), start_total_cash)
     try:
         while True:
             # 현재 시각
@@ -92,13 +93,22 @@ if __name__ == '__main__':
                 sys.exit(0)
             # 장 중간 거래
             if t_9 < t_now < t_exit :
-                # 상승 200종목 가져오기
                 '''
+                # 현재 보유 종목 없을때만 매수 진행
+                1. 현재보유종목 여부 확인
+                2. 있으면 매도, 없으면 매수 진행
+                
+                # 상승 200종목 가져오기
                 codes : 상승률 200종목 종목코드
                 symbol_list : 종목코드 / 종목명 / 현재가 / 대비플래그 / 대비 / 대비율(등락률) / 거래량
                 rqField & symbol_list2 : 종목코드, 시간, 대비부호, 대비, 현재가, 시가, 매도호가, 매수호가, 거래량, 거래대금, 전일거래량, 체결강도
 
                 '''
+
+                stocks = get_stock_balance('ALL')  # 보유한 모든 종목 리턴
+                if len(stocks) != 0 :
+                    sell_all()
+
                 codes = []
                 symbol_list = []
                 obj7043 = Cp7043()
@@ -114,33 +124,26 @@ if __name__ == '__main__':
                 if len(final_symbol_list) >= 1 :
                     # 매수
                     # 우선은 한종목 전체 매수
+                    # 매수 방식 : IOC (체결된 수량 이외 남은 수량은 자동 취소)
                     final_symbol_list = final_symbol_list[0]
-                    buy(company_code=final_symbol_list[0], buy_quantity=(total_cash // final_symbol_list[5]) // 2, buy_price=final_symbol_list[5])
+                    total_cash =  int(get_current_cash())
+                    buy_ioc(company_code=final_symbol_list[0], buy_quantity=(total_cash // final_symbol_list[5]) // 2, buy_price=final_symbol_list[5])
 
-                    # 매수 확인 후 메세지 보내기
-
-                    while True :
-                        stocks = get_stock_balance('ALL')  # 보유한 모든 종목 조회
-
-                        if final_symbol_list[0] in list(kospi_re.keys()) :
-                            text = '{} 매수 완료'.format(kospi_re[final_symbol_list[0]])
-                        else :
-                            text = '{} 매수 완료'.format(kosdaq_re[final_symbol_list[0]])
+                    stocks = get_stock_balance('ALL')  # 보유한 모든 종목 조회
+                    # 매수 완료 종목 메세지 보내기
+                    for stock in stocks :
+                        text = '종목명 : {} / 매수 완료'.format(stock['name'])
                         post_message(slack_api_token, "#주식", text)
 
-                        time.sleep(1.5)
-
                     # 현재상황 판단 -> 매도 시그널 제공시 전체 매도
-                    while True and len(stocks) != 0 :
-                        condition(stocks)
-                        #1.5초마다 재판단
-                        time.sleep(1.5)
 
-                    if len(stocks) != 0 :
-                        # 매도
-                        sell_all()
-                    else :
-                        pass
+                    while len(get_stock_balance('ALL')) != 0 :
+                        stocks = get_stock_balance('ALL')
+                        if condition(stocks) :
+                            sell_all()
+                        #1.5초마다 재판단
+                        time.sleep(1)
+
                 else :
                     pass
 
@@ -148,7 +151,9 @@ if __name__ == '__main__':
             # 3초후 재탐색
 
             time.sleep(3)
-            # print('재탐색 시작')
+
+
+
     except Exception as ex:
         print('`main -> exception! ' + str(ex) + '`')
 
