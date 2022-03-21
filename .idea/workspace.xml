@@ -4,12 +4,7 @@
     <list default="true" id="2a5e1a0e-8b30-4032-80c3-8ee23dc967c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybos_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybos_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mariadb.py" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/strategy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trade_scalping.py" beforeDir="false" afterPath="$PROJECT_DIR$/trade_scalping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" beforeDir="false" afterPath="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/주식정보.md" beforeDir="false" afterPath="$PROJECT_DIR$/주식정보.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/현재잔고 확인하기.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/현재잔고 확인하기.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trade_scalping_v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/trade_scalping_v3.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cybos_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-104">
-              <caret line="419" column="11" selection-start-line="419" selection-start-column="4" selection-end-line="419" selection-end-column="11" />
+            <state relative-caret-position="444">
+              <caret line="449" column="14" selection-start-line="449" selection-start-column="4" selection-end-line="449" selection-end-column="14" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -79,14 +74,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trade_scalping_v3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
+            <state relative-caret-position="2584">
+              <caret line="152" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="e#303#333#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cybos_1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2036">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -174,10 +178,10 @@
       <find>buy</find>
       <find>get_stock_balance</find>
       <find>total_cash</find>
-      <find>buy_ioc</find>
       <find>CpMarketEye_v2</find>
       <find>sell_</find>
       <find>sell_all</find>
+      <find>buy_ioc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -205,8 +209,8 @@
         <option value="$PROJECT_DIR$/주식정보.md" />
         <option value="$PROJECT_DIR$/trade_scalping.py" />
         <option value="$PROJECT_DIR$/strategy.py" />
-        <option value="$PROJECT_DIR$/cybos_base.py" />
         <option value="$PROJECT_DIR$/trade_scalping_v2_20220304.py" />
+        <option value="$PROJECT_DIR$/cybos_base.py" />
         <option value="$PROJECT_DIR$/trade_scalping_v3.py" />
       </list>
     </option>
@@ -214,7 +218,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="3871" />
     <option name="width" value="2160" />
-    <option name="height" value="1731" />
+    <option name="height" value="2375" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -355,15 +359,15 @@
       <workItem from="1647384270808" duration="1034000" />
       <workItem from="1647471441399" duration="2701000" />
       <workItem from="1647558467375" duration="620000" />
-      <workItem from="1647817760590" duration="2596000" />
+      <workItem from="1647817760590" duration="3526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135544000" />
+    <option name="totallyTimeSpent" value="136474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3861" y="0" width="1440" height="1154" extended-state="0" />
+    <frame x="3861" y="0" width="1440" height="1583" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2170767" />
@@ -380,7 +384,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006605" side_tool="true" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" visible="true" weight="0.47800586" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" visible="true" weight="0.33677685" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.2737048" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -483,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybos_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2890">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cybos_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -552,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -617,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybos_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="419" column="11" selection-start-line="419" selection-start-column="4" selection-end-line="419" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trade_scalping_v2_20220304.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -637,13 +617,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/configs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybos_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="449" column="14" selection-start-line="449" selection-start-column="4" selection-end-line="449" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trade_scalping_v3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
+        <state relative-caret-position="2584">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="e#303#333#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybos_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2036">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
         </state>
       </provider>
     </entry>
