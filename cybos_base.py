@@ -8,7 +8,7 @@ from urllib.request import urlopen
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utils import *
-
+from slack import *
 
 # 크레온 플러스 공통 OBJECT
 # 각종 코드정보 및 코드 리스트를 얻을 수 있습니다.
@@ -308,6 +308,52 @@ def sell_all():
         print("sell_all() -> exception! " + str(ex))
 
 
+def sell_all_slack(slack_token):
+    """
+    acc : 계좌번호
+    target_code
+    보유한 모든 종목을 최유리 지정가 IOC 조건으로 매도한다.
+
+    IOC : 남은것들 중 체결되지 못한 잔량만 전부 취소
+    FOK : 단 1주라도 체결이 안되면 주문 전체가 취소
+
+
+    """
+    try:
+        # cpTradeUtil.TradeInit()
+        acc = cpTradeUtil.AccountNumber[0]  # 계좌번호
+        accFlag = cpTradeUtil.GoodsList(acc, 1)  # -1:전체, 1:주식, 2:선물/옵션
+        while True:
+            stocks = get_stock_balance('ALL')
+            total_qty = 0
+            for s in stocks:
+                total_qty += s['qty']
+            if total_qty == 0:
+                return True
+            for s in stocks:
+                if s['qty'] != 0:
+                    cpOrder.SetInputValue(0, "1")  # 1:매도, 2:매수
+                    cpOrder.SetInputValue(1, acc)  # 계좌번호
+                    cpOrder.SetInputValue(2, accFlag[0])  # 주식상품 중 첫번째
+                    cpOrder.SetInputValue(3, s['code'])  # 종목코드
+                    cpOrder.SetInputValue(4, s['qty'])  # 매도수량
+                    cpOrder.SetInputValue(7, "1")  # 조건 0:기본, 1:IOC, 2:FOK
+                    cpOrder.SetInputValue(8, "12")  # 호가 12:최유리, 13:최우선
+                    # 최유리 IOC 매도 주문 요청
+                    ret = cpOrder.BlockRequest()
+                    print('최유리 IOC 매도', s['code'], s['name'], s['qty'],
+                             '-> cpOrder.BlockRequest() -> returned', ret)
+                    if ret == 4:
+                        remain_time = cpStatus.LimitRequestRemainTime
+                        print('주의: 연속 주문 제한, 대기시간:', remain_time / 1000)
+                    text = '종목명 : {} / 매도 완료'.format(s['name'])
+                    post_message(slack_token, "#주식", text)
+
+
+                time.sleep(1)
+            time.sleep(3)
+    except Exception as ex:
+        print("sell_all() -> exception! " + str(ex))
 
 # 현재잔고 확인하기
 def deposit_chk() :

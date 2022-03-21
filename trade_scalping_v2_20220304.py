@@ -107,7 +107,7 @@ if __name__ == '__main__':
 
                 stocks = get_stock_balance('ALL')  # 보유한 모든 종목 리턴
                 if len(stocks) != 0 :
-                    sell_all()
+                    sell_all_slack(slack_api_token)
 
                 codes = []
                 symbol_list = []
@@ -139,7 +139,9 @@ if __name__ == '__main__':
                     while len(get_stock_balance('ALL')) != 0 :
                         stocks = get_stock_balance('ALL')
                         if condition(stocks) :
-                            sell_all()
+                            sell_all_slack(slack_api_token)
+
+
                         #1.5초마다 재판단
                         time.sleep(1)
                         if datetime.now() > t_exit :
@@ -158,5 +160,3 @@ if __name__ == '__main__':
 
     except Exception as ex:
         print('`main -> exception! ' + str(ex) + '`')
-
-

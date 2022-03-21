@@ -2,6 +2,12 @@ import pymysql
 import configs
 
 
+'''
+RISE : 급상승 종목 속성 저장 테이블
+
+
+'''
+
 
 conn = pymysql.connect(host=configs.ip,
                        user='root',

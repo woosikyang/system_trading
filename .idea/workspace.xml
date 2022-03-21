@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2a5e1a0e-8b30-4032-80c3-8ee23dc967c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Top200.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Top200.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cybos_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/cybos_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mariadb.py" beforeDir="false" afterPath="$PROJECT_DIR$/mariadb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trade_scalping.py" beforeDir="false" afterPath="$PROJECT_DIR$/trade_scalping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" beforeDir="false" afterPath="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/주식정보.md" beforeDir="false" afterPath="$PROJECT_DIR$/주식정보.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/현재잔고 확인하기.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/현재잔고 확인하기.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,21 +34,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cybos_base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15079">
-              <caret line="896" selection-start-line="896" selection-end-line="896" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/markeyeye.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
+            <state split_layout="SPLIT">
               <first_editor />
               <second_editor />
             </state>
@@ -53,22 +44,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slack.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strategy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="44" selection-start-line="37" selection-end-line="44" />
+            <state relative-caret-position="918">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#98#138#0" expanded="true" />
               </folding>
@@ -77,10 +56,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trade_scalping.py">
+        <entry file="file://$PROJECT_DIR$/trade_scalping_v2_20220304.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="298">
+              <caret line="128" column="27" selection-end-line="162" />
               <folding>
                 <element signature="e#303#333#0" expanded="true" />
               </folding>
@@ -88,11 +67,35 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cybos_base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-104">
+              <caret line="419" column="11" selection-start-line="419" selection-start-column="4" selection-end-line="419" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trade_scalping_v3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="724">
+              <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
+              <folding>
+                <element signature="e#303#333#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/미체결 조회 및 일괄 취소.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="552" column="30" lean-forward="true" selection-start-line="552" selection-start-column="30" selection-end-line="552" selection-end-column="30" />
+            <state relative-caret-position="1904">
+              <caret line="115" column="29" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="29" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -101,13 +104,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mariadb.py">
+        <entry file="file://$PROJECT_DIR$/종목검색_전략조건.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="7" selection-start-line="17" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="17">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/주식정보.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="136">
+                <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -142,16 +157,27 @@
       <find>CpEvent</find>
       <find>g_objCpStatus</find>
       <find>g_objCodeMgr</find>
-      <find>CpMarketEye_v2</find>
-      <find>get_stock_balance</find>
       <find>cpBalance</find>
-      <find>sell_</find>
       <find>CpTd0311</find>
       <find>cpTradeUtil</find>
       <find>cpTradeUtil.TradeInit()</find>
       <find>cpCodeMgr</find>
       <find>sell_all()</find>
       <find>exit()</find>
+      <find>get_stock</find>
+      <find>QApplication</find>
+      <find>orderData</find>
+      <find>Cp5339</find>
+      <find>Reqeust5339</find>
+      <find>Request5339</find>
+      <find>deleteOrderNum</find>
+      <find>buy</find>
+      <find>get_stock_balance</find>
+      <find>total_cash</find>
+      <find>buy_ioc</find>
+      <find>CpMarketEye_v2</find>
+      <find>sell_</find>
+      <find>sell_all</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,18 +200,21 @@
         <option value="$PROJECT_DIR$/slack.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/mariadb.py" />
+        <option value="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" />
+        <option value="$PROJECT_DIR$/tmp.py" />
+        <option value="$PROJECT_DIR$/주식정보.md" />
+        <option value="$PROJECT_DIR$/trade_scalping.py" />
         <option value="$PROJECT_DIR$/strategy.py" />
         <option value="$PROJECT_DIR$/cybos_base.py" />
-        <option value="$PROJECT_DIR$/trade_scalping.py" />
-        <option value="$PROJECT_DIR$/미체결 조회 및 일괄 취소.py" />
+        <option value="$PROJECT_DIR$/trade_scalping_v2_20220304.py" />
+        <option value="$PROJECT_DIR$/trade_scalping_v3.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="8" />
-    <option name="width" value="2840" />
-    <option name="height" value="2090" />
+    <option name="x" value="3871" />
+    <option name="width" value="2160" />
+    <option name="height" value="1731" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -195,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,7 +236,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,16 +316,80 @@
       <workItem from="1626786502064" duration="840000" />
       <workItem from="1626862191598" duration="152000" />
       <workItem from="1626865774834" duration="3859000" />
+      <workItem from="1626936599477" duration="1811000" />
+      <workItem from="1627471574069" duration="616000" />
+      <workItem from="1627562441011" duration="601000" />
+      <workItem from="1627990382595" duration="619000" />
+      <workItem from="1628068483955" duration="599000" />
+      <workItem from="1628165289702" duration="610000" />
+      <workItem from="1628506978103" duration="599000" />
+      <workItem from="1628838016554" duration="1884000" />
+      <workItem from="1629171103278" duration="1204000" />
+      <workItem from="1629280516370" duration="1209000" />
+      <workItem from="1630299891746" duration="606000" />
+      <workItem from="1631356667832" duration="1206000" />
+      <workItem from="1631421932031" duration="653000" />
+      <workItem from="1634359399826" duration="598000" />
+      <workItem from="1635857639886" duration="688000" />
+      <workItem from="1636365242614" duration="299000" />
+      <workItem from="1637057812497" duration="5027000" />
+      <workItem from="1638962979643" duration="48000" />
+      <workItem from="1639664628352" duration="16000" />
+      <workItem from="1640910523911" duration="629000" />
+      <workItem from="1644240666768" duration="1484000" />
+      <workItem from="1644317389656" duration="2944000" />
+      <workItem from="1644329260300" duration="549000" />
+      <workItem from="1644415248274" duration="750000" />
+      <workItem from="1644844952594" duration="609000" />
+      <workItem from="1645052494385" duration="745000" />
+      <workItem from="1645400710426" duration="629000" />
+      <workItem from="1645673175607" duration="3016000" />
+      <workItem from="1645746436972" duration="1932000" />
+      <workItem from="1645805779850" duration="627000" />
+      <workItem from="1646005535347" duration="4359000" />
+      <workItem from="1646347314437" duration="734000" />
+      <workItem from="1646384874792" duration="599000" />
+      <workItem from="1646544308190" duration="613000" />
+      <workItem from="1646742615768" duration="1217000" />
+      <workItem from="1647171247146" duration="2083000" />
+      <workItem from="1647384270808" duration="1034000" />
+      <workItem from="1647471441399" duration="2701000" />
+      <workItem from="1647558467375" duration="620000" />
+      <workItem from="1647817760590" duration="2596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86181000" />
+    <option name="totallyTimeSpent" value="135544000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="4" width="1420" height="1045" extended-state="0" />
+    <frame x="3861" y="0" width="1440" height="1154" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1085044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2170767" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006605" side_tool="true" weight="0.32969433" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" visible="true" weight="0.47800586" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.2737048" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32921448" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3283208" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21528424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -311,13 +404,13 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006605" side_tool="true" weight="0.32969433" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993395" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.45960698" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.26310045" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32921448" />
       <window_info anchor="right" id="Database" order="4" weight="0.3283208" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -341,21 +434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1422">
           <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -386,23 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/종목검색_전략조건.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/주식 매수 주문 요청 및 에러 처리 방법.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Untitled.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Untitled1.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Untitled2.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/스캘핑연습.ipynb">
@@ -410,14 +472,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/현재잔고 확인하기.ipynb">
       <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/주식정보.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cybose_tutorial.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -443,12 +497,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cybos_base.py">
+    <entry file="file://$PROJECT_DIR$/Untitled1.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Untitled2.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/주식 매수 주문 요청 및 에러 처리 방법.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Untitled3.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade_scalping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15079">
-          <caret line="896" selection-start-line="896" selection-end-line="896" />
+        <state relative-caret-position="510">
+          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#303#333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mariadb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -456,38 +535,65 @@
     <entry file="file://$PROJECT_DIR$/markeyeye.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor />
+          <first_editor relative-caret-position="255">
+            <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/slack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/strategy.py">
+    <entry file="file://$PROJECT_DIR$/configs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="44" selection-start-line="37" selection-end-line="44" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/미체결 조회 및 일괄 취소.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="115" column="29" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="29" />
           <folding>
-            <element signature="e#98#138#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mariadb.py">
+    <entry file="file://$PROJECT_DIR$/종목검색_전략조건.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="7" selection-start-line="17" selection-end-line="18" selection-end-column="7" />
+        <state relative-caret-position="17">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/주식정보.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -501,22 +607,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trade_scalping.py">
+    <entry file="file://$PROJECT_DIR$/strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="918">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#98#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cybos_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="419" column="11" selection-start-line="419" selection-start-column="4" selection-end-line="419" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trade_scalping_v2_20220304.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="128" column="27" selection-end-line="162" />
           <folding>
             <element signature="e#303#333#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/미체결 조회 및 일괄 취소.py">
+    <entry file="file://$PROJECT_DIR$/trade_scalping_v3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="552" column="30" lean-forward="true" selection-start-line="552" selection-start-column="30" selection-end-line="552" selection-end-column="30" />
+        <state relative-caret-position="724">
+          <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#303#333#0" expanded="true" />
           </folding>
         </state>
       </provider>
