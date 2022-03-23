@@ -54,8 +54,13 @@ if __name__ == '__main__':
 
     print('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
     t_now = datetime.now()
+    # 장 전
+    t_8 = t_now.replace(hour=8, minute=45, second=0, microsecond=0)
+    t_8_1 = t_now.replace(hour=8, minute=59, second=0, microsecond=0)
+
     # 장 시작
     t_9 = t_now.replace(hour=9, minute=0, second=0, microsecond=0)
+    t_9_1 = t_now.replace(hour=9, minute=0, second=2, microsecond=5)
     # 장 종료
     t_exit = t_now.replace(hour=15, minute=20, second=0, microsecond=0)
     # 토/일 종료
@@ -74,7 +79,7 @@ if __name__ == '__main__':
             # 현재 시각
             t_now = datetime.now()
             # 장 시작 메세지 전송
-            if t_now == t_9 :
+            if (t_now >= t_9) and (t_now <= t_9_1) :
                 text = '국내 정규장 시작했습니다'
                 post_message(slack_api_token, "#주식", text)
             # 장 종료 메세지 전송
@@ -91,6 +96,10 @@ if __name__ == '__main__':
                 # DB 에 저장
                 # To Be Updated
                 sys.exit(0)
+            # 장 전 예상체결 기준 종목 선정
+            if (t_now >= t_8) and (t_now <= t_8_1) :
+
+
             # 장 중간 거래
             if t_9 < t_now < t_exit :
                 '''
@@ -114,23 +123,28 @@ if __name__ == '__main__':
                 obj7043 = Cp7043()
                 obj7043.Request(codes, symbol_list)
                 # 종목정보 가져오기
-                # rqField = [0,1,2,3,4,10,17,11, 22, 24]  # 요청 필드
+                # rqField = [0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 22, 24]
                 symbol_list2 = CpMarketEye_v2(codes)
 
                 # 필터링 후 매수 대상 종목선정
-                final_symbol_list = filtering(symbol_list2)
+                final_symbol_list = filtering_v2(symbol_list2)
 
                 if len(final_symbol_list) >= 1 :
                     # 매수 방식 : IOC (체결된 수량 이외 남은 수량은 자동 취소)
                     final_symbol_list = final_symbol_list[0]
                     total_cash =  int(get_current_cash())
                     buy_ioc_v2(company_code=final_symbol_list[0], buy_quantity=(total_cash // final_symbol_list[4]) // 2, buy_price=final_symbol_list[4])
+                    stocks = get_stock_balance('ALL')
+                    if len(stocks) != 0 :
+                        for stock in stocks:
+                            text = '종목명 : {} / 평균가격 : {} / 매수 완료 '.format(stock['name'], final_symbol_list[4])
+                            post_message(slack_api_token, "#주식", text)
 
                     # 현재상황 판단 -> 매도 시그널 제공시 전체 매도
 
                     while len(get_stock_balance('ALL')) != 0 :
                         stocks = get_stock_balance('ALL')
-                        if condition(stocks) :
+                        if condition_v2(stocks) :
                             sell_all_slack(slack_api_token)
 
 
@@ -143,10 +157,9 @@ if __name__ == '__main__':
                 else :
                     pass
 
-
             # 3초후 재탐색
 
-            time.sleep(3)
+            time.sleep(2)
 
     except Exception as ex:
         print('`main -> exception! ' + str(ex) + '`')
